@@ -16,18 +16,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>LizZ&#39;s blog</title>
-  <meta name="description" content="你好，欢迎光临我的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LizZ的博客">
-<meta property="og:url" content="https://drangeer.github.io/index.html">
+  <title>Hexo主题pure使用指南 | LizZ&#39;s blog</title>
+  <meta name="description" content="1.webpack 打包问题Q:问题​        当使用&lt;%&#x3D; BASE_URL %&gt;进行项目打包的时候会抛出如下的bug 1234&lt;link rel&#x3D;&quot;icon&quot; href&#x3D;&quot;&lt;%&#x3D; BASE_URL %&gt;favicon.ico&quot;&gt;&lt;!--  使用base_url的时候，在项目打包过程中会抛出如下错误，	  换成.&#x2F;就没有了，超级奇怪--&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo主题pure使用指南">
+<meta property="og:url" content="https://drangeer.github.io/2020/03/13/webpackQuestion/index.html">
 <meta property="og:site_name" content="LizZ的博客">
-<meta property="og:description" content="你好，欢迎光临我的博客">
+<meta property="og:description" content="1.webpack 打包问题Q:问题​        当使用&lt;%&#x3D; BASE_URL %&gt;进行项目打包的时候会抛出如下的bug 1234&lt;link rel&#x3D;&quot;icon&quot; href&#x3D;&quot;&lt;%&#x3D; BASE_URL %&gt;favicon.ico&quot;&gt;&lt;!--  使用base_url的时候，在项目打包过程中会抛出如下错误，	  换成.&#x2F;就没有了，超级奇怪--&gt;">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://drangeer.github.io/2020/03/13/webpackQuestion/1583826570990.png">
+<meta property="article:published_time" content="2020-03-13T06:34:15.000Z">
+<meta property="article:modified_time" content="2020-04-07T07:57:39.683Z">
 <meta property="article:author" content="LizZ">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://drangeer.github.io/2020/03/13/webpackQuestion/1583826570990.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://drangeer.github.io/index.html">
+  <link rel="canonical" href="https://drangeer.github.io/2020/03/13/webpackQuestion/index.html">
   
     <link rel="alternate" href="/atom.xml" title="LizZ的博客" type="application/atom+xml">
   
@@ -46,7 +51,7 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
-<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+<body class="main-center theme-black no-sidebar" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
   <div class="slimContent">
     <div class="navbar-header">
@@ -286,255 +291,167 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  <div class="content article-list">
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-webpack-打包问题"><span class="toc-number">1.</span> <span class="toc-text">1.webpack 打包问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-问题"><span class="toc-number">1.0.1.</span> <span class="toc-text">Q:问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-解决方法"><span class="toc-number">1.0.2.</span> <span class="toc-text">A:解决方法</span></a></li></ol></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-webpackQuestion" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/02/cesium-3dtiles-osgb/">cesium生成并加载3dTiles</a>
+    <h1 class="article-title" itemprop="name">
+      Hexo主题pure使用指南
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/02/cesium-3dtiles-osgb/" class="article-date">
-	  <time datetime="2020-04-02T07:41:18.000Z" itemprop="datePublished">4月 2</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/cesium/">cesium</a>►<a class="article-category-link" href="/categories/cesium/gis/">gis</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/3dtiles/" rel="tag">3dtiles</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/02/cesium-3dtiles-osgb/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 370(字)</span>
-	
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/01/cesium-entity/">cesium-entity详解</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/01/cesium-entity/" class="article-date">
-	  <time datetime="2020-04-01T09:09:17.000Z" itemprop="datePublished">4月 1</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/cesium/">cesium</a>►<a class="article-category-link" href="/categories/cesium/gis/">gis</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/question-list/" rel="tag">question list</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/01/cesium-entity/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 83(字)</span>
-	
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/">hexo使用记录</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
-	  <time datetime="2020-04-01T03:31:21.000Z" itemprop="datePublished">4月 1</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/hexo/" rel="tag">hexo</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 78(字)</span>
-	
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/01/require-context/">require.context自动加载模块</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/01/require-context/" class="article-date">
-	  <time datetime="2020-04-01T03:06:02.000Z" itemprop="datePublished">4月 1</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/web/" rel="tag">web</a>, <a class="article-tag-link" href="/tags/webpack/" rel="tag">webpack</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/01/require-context/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 457(字)</span>
-	
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/13/webpackQuestion/">Hexo主题pure使用指南</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
 	<a href="/2020/03/13/webpackQuestion/" class="article-date">
-	  <time datetime="2020-03-13T06:34:15.000Z" itemprop="datePublished">3月 13</time>
+	  <time datetime="2020-03-13T06:34:15.000Z" itemprop="datePublished">2020-03-13</time>
 	</a>
 </span>
-    
+        
   <span class="article-category">
     <i class="icon icon-folder"></i>
     <a class="article-category-link" href="/categories/hexo/">hexo</a>
   </span>
 
-    
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
 	<a class="article-tag-link" href="/tags/hexo/" rel="tag">hexo</a>
   </span>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/13/webpackQuestion/#comments" class="article-comment-link">评论</a></span>
-    
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/13/webpackQuestion/#comments" class="article-comment-link">评论</a></span>
+        
 	
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 197(字)</span>
 	
 	
 
-  </p>
-</article>
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h2 id="1-webpack-打包问题"><a href="#1-webpack-打包问题" class="headerlink" title="1.webpack 打包问题"></a>1.webpack 打包问题</h2><h4 id="Q-问题"><a href="#Q-问题" class="headerlink" title="Q:问题"></a>Q:问题</h4><p>​        当使用<code>&lt;%= BASE_URL %&gt;</code>进行项目打包的时候会抛出如下的bug</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">href</span>=<span class="string">"&lt;%= BASE_URL %&gt;favicon.ico"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  使用base_url的时候，在项目打包过程中会抛出如下错误，</span></span><br><span class="line"><span class="comment">	  换成./就没有了，超级奇怪</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
 
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/12/01_hello-world/">Hello World !</a>
-    </h1>
-  
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// active ...s\normalize-wheel\src\normalizeWheel.jsURIError: Failed to decode param '/%3C%=%20BASE_URL%20%%3Efavicon.ico'</span></span><br></pre></td></tr></table></figure>
 
+
+
+<p><img src="1583826570990.png" alt="webpack编译问题"></p>
+<h4 id="A-解决方法"><a href="#A-解决方法" class="headerlink" title="A:解决方法"></a>A:解决方法</h4><p>​        目前没有查询到问题出现的具体原因。在git上看到有相关的介绍，有说是因为项目级的webpack的版本和内部子模块使用的版本冲突导致；</p>
+<p>​        现在规避了这个问题，使用<code>相对路径./</code>解决。</p>
+<p>​        可能以后会遇到同样的问题，到时候再对这个bug进行完善补充吧。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://drangeer.github.io/2020/03/13/webpackQuestion/" title="Hexo主题pure使用指南" target="_blank" rel="external">https://drangeer.github.io/2020/03/13/webpackQuestion/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Drangeer" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Drangeer" target="_blank"><span class="text-dark">LizZ</span><small class="ml-1x">GISer &amp; Web Developer</small></a></h3>
+        <div>享受生活，热爱生命。</div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/03/12/01_hello-world/" class="article-date">
-	  <time datetime="2020-03-12T07:31:21.000Z" itemprop="datePublished">3月 12</time>
-	</a>
-</span>
+    
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/04/01/require-context/" title="require.context自动加载模块"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+    </li>
     
     
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/12/01_hello-world/#comments" class="article-comment-link">评论</a></span>
+    <li class="next">
+      <a href="/2020/03/12/01_hello-world/" title="Hello World !">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 82(字)</span>
-	
-	
-
-  </p>
-</article>
-
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    
+    <div class="toggle-toc hidden-xs">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+      </a>
+    </div>
     
   </div>
+  </div>
+</nav>
+  
 
-   
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -584,13 +501,12 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
     
     
     
-        
-<script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
     
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
     
     
 

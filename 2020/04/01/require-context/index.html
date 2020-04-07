@@ -16,18 +16,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>LizZ&#39;s blog</title>
-  <meta name="description" content="你好，欢迎光临我的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LizZ的博客">
-<meta property="og:url" content="https://drangeer.github.io/index.html">
+  <title>require.context自动加载模块 | LizZ&#39;s blog</title>
+  <meta name="description" content="最近看到项目里面使用require.context来自动加载所有的模块，减少手动复制粘贴，提示效率和代码逼格。整好时间允许，我也来看看到底是如何实现的。 require.context是什么   一个webpack的api,通过执行require.context函数获取一个特定的上下文,主要用来实现自动化导入模块   在前端工程中,如果遇到从一个文件夹引入很多模块的情况,可以使用这个api,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="require.context自动加载模块">
+<meta property="og:url" content="https://drangeer.github.io/2020/04/01/require-context/index.html">
 <meta property="og:site_name" content="LizZ的博客">
-<meta property="og:description" content="你好，欢迎光临我的博客">
+<meta property="og:description" content="最近看到项目里面使用require.context来自动加载所有的模块，减少手动复制粘贴，提示效率和代码逼格。整好时间允许，我也来看看到底是如何实现的。 require.context是什么   一个webpack的api,通过执行require.context函数获取一个特定的上下文,主要用来实现自动化导入模块   在前端工程中,如果遇到从一个文件夹引入很多模块的情况,可以使用这个api,">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://drangeer.github.io/2020/04/01/require-context/p1.png">
+<meta property="og:image" content="https://drangeer.github.io/2020/04/01/require-context/p2.png">
+<meta property="article:published_time" content="2020-04-01T03:06:02.000Z">
+<meta property="article:modified_time" content="2020-04-07T07:53:07.391Z">
 <meta property="article:author" content="LizZ">
+<meta property="article:tag" content="webpack">
+<meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://drangeer.github.io/2020/04/01/require-context/p1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://drangeer.github.io/index.html">
+  <link rel="canonical" href="https://drangeer.github.io/2020/04/01/require-context/index.html">
   
     <link rel="alternate" href="/atom.xml" title="LizZ的博客" type="application/atom+xml">
   
@@ -286,255 +293,161 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  <div class="content article-list">
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-require-context" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/02/cesium-3dtiles-osgb/">cesium生成并加载3dTiles</a>
+    <h1 class="article-title" itemprop="name">
+      require.context自动加载模块
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/02/cesium-3dtiles-osgb/" class="article-date">
-	  <time datetime="2020-04-02T07:41:18.000Z" itemprop="datePublished">4月 2</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/cesium/">cesium</a>►<a class="article-category-link" href="/categories/cesium/gis/">gis</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/3dtiles/" rel="tag">3dtiles</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/02/cesium-3dtiles-osgb/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 370(字)</span>
-	
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/01/cesium-entity/">cesium-entity详解</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/01/cesium-entity/" class="article-date">
-	  <time datetime="2020-04-01T09:09:17.000Z" itemprop="datePublished">4月 1</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/cesium/">cesium</a>►<a class="article-category-link" href="/categories/cesium/gis/">gis</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/question-list/" rel="tag">question list</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/01/cesium-entity/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 83(字)</span>
-	
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/">hexo使用记录</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
-	  <time datetime="2020-04-01T03:31:21.000Z" itemprop="datePublished">4月 1</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/hexo/" rel="tag">hexo</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 78(字)</span>
-	
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/01/require-context/">require.context自动加载模块</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
 	<a href="/2020/04/01/require-context/" class="article-date">
-	  <time datetime="2020-04-01T03:06:02.000Z" itemprop="datePublished">4月 1</time>
+	  <time datetime="2020-04-01T03:06:02.000Z" itemprop="datePublished">2020-04-01</time>
 	</a>
 </span>
-    
-    
+        
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
 	<a class="article-tag-link" href="/tags/web/" rel="tag">web</a>, <a class="article-tag-link" href="/tags/webpack/" rel="tag">webpack</a>
   </span>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/01/require-context/#comments" class="article-comment-link">评论</a></span>
-    
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/01/require-context/#comments" class="article-comment-link">评论</a></span>
+        
 	
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 457(字)</span>
 	
 	
 
-  </p>
-</article>
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p>   最近看到项目里面使用<code>require.context</code>来自动加载所有的模块，减少手动复制粘贴，提示效率和代码逼格。整好时间允许，我也来看看到底是如何实现的。</p>
+<h3 id="require-context是什么"><a href="#require-context是什么" class="headerlink" title="require.context是什么"></a>require.context是什么</h3><p>   一个webpack的api,通过执行require.context函数获取一个特定的上下文,主要用来实现自动化导入模块<br>   在前端工程中,如果遇到从一个文件夹引入很多模块的情况,可以使用这个api,它会遍历文件夹中的指定文件,然后自动导入,使得不需要每次显式的调用import导入模块</p>
+<p>   比如在下面的情况中<br>   <img src="/2020/04/01/require-context/p1.png" class="" title="较多的模块导入"></p>
+<h3 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h3><p>   require.context的使用方法如下，该函数执行后返回的是一个函数,并且这个函数有3个属性</p>
+<ul>
+<li><p>resolve  接受一个参数request,request为模块的匹配结果的的相对路径,返回这个匹配文件相对于整个工程的相对路径（）</p>
+</li>
+<li><p>keys     返回匹配成功模块的名字组成的数组</p>
+</li>
+<li><p>id       执行环境的id(目前发现没有什么实际意义)</p>
+<pre><code class="javascript"><span class="built_in">require</span>.context(<span class="string">'directory'</span>,<span class="string">'bool'</span>,<span class="string">'reg'</span>)
+<span class="comment">//directory {String} -读取文件的路径</span>
+<span class="comment">//useSubdirectories {Boolean} -是否遍历文件的子目录   </span>
+<span class="comment">//regExp {RegExp} -匹配文件的正则</span>
+<span class="comment">// 下面为demo</span>
+<span class="keyword">const</span> modules= <span class="built_in">require</span>.context(<span class="string">'./'</span>,<span class="literal">true</span>,/.vue$/);
+<span class="keyword">const</span> relativePath= modules.keys()  <span class="comment">//获取所有.vue 模块的相对于./的路径</span>
+<span class="keyword">const</span> <span class="built_in">module</span>=modules(relativePath[<span class="number">0</span>]).default  <span class="comment">// 获取第一个模块</span>
+</code></pre>
+<h3 id="使用范围"><a href="#使用范围" class="headerlink" title="使用范围"></a>使用范围</h3><p>1、自动模块导入<br>2、所有图片的导入</p>
+<h3 id="QA"><a href="#QA" class="headerlink" title="QA"></a>QA</h3><p>目前在模块导出的时候，使用一个空对象{}接收对象名和对象值，再export default {XXX:XXX}<br>这样就在使用的时候，必须使用modules.XXX才可以，不能使用{XXX} 来直接使用<br>等待以后慢慢寻找更优解吧</p>
+</li>
+</ul>
+<hr>
+   <img src="/2020/04/01/require-context/p2.png" class="" title="使用两种方式导出模块">
 
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/13/webpackQuestion/">Hexo主题pure使用指南</a>
-    </h1>
-  
 
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://drangeer.github.io/2020/04/01/require-context/" title="require.context自动加载模块" target="_blank" rel="external">https://drangeer.github.io/2020/04/01/require-context/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Drangeer" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Drangeer" target="_blank"><span class="text-dark">LizZ</span><small class="ml-1x">GISer &amp; Web Developer</small></a></h3>
+        <div>享受生活，热爱生命。</div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/03/13/webpackQuestion/" class="article-date">
-	  <time datetime="2020-03-13T06:34:15.000Z" itemprop="datePublished">3月 13</time>
-	</a>
-</span>
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-  </span>
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
 
     
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/hexo/" rel="tag">hexo</a>
-  </span>
+  </section>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/13/webpackQuestion/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 197(字)</span>
-	
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/12/01_hello-world/">Hello World !</a>
-    </h1>
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
   
-
-  </div>
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/" title="hexo使用记录"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/03/13/webpackQuestion/" title="Hexo主题pure使用指南">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+  </ul>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/03/12/01_hello-world/" class="article-date">
-	  <time datetime="2020-03-12T07:31:21.000Z" itemprop="datePublished">3月 12</time>
-	</a>
-</span>
+  
+  
+  <div class="bar-right">
     
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/12/01_hello-world/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 82(字)</span>
-	
-	
-
-  </p>
-</article>
-
     
   </div>
+  </div>
+</nav>
+  
 
-   
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -591,6 +504,12 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
     
     
 

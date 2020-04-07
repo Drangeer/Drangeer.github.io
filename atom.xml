@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LizZ的博客</title>
+  
+  <subtitle>LizZ Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://drangeer.github.io/"/>
+  <updated>2020-04-07T07:47:36.568Z</updated>
+  <id>https://drangeer.github.io/</id>
+  
+  <author>
+    <name>LizZ</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cesium生成并加载3dTiles</title>
+    <link href="https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/"/>
+    <id>https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/</id>
+    <published>2020-04-02T07:41:18.000Z</published>
+    <updated>2020-04-07T07:47:36.568Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="cesium加载三维倾斜模型"><a href="#cesium加载三维倾斜模型" class="headerlink" title="cesium加载三维倾斜模型"></a>cesium加载三维倾斜模型</h1><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>目前cesium加载海量模型，并不能直接通过gltf文件来使用，一种较为合适的通用做法是对大场景进行切片，即生成影像金字塔(LOD)。这样就跟wmts或tms方式一样来加载超大的影像。</p><h3 id="osgb生成3dtiles"><a href="#osgb生成3dtiles" class="headerlink" title="osgb生成3dtiles"></a>osgb生成3dtiles</h3><p>1.osgb文件什么样<br>主要长下面的样子，由一个元数据xml和一个Data文件夹组成，Data里面包含的是由一系列不同编号的osgb文件夹组成</p><img src="/2020/04/02/cesium-3dtiles-osgb/p1.png" class="" title="osgb文件的模样"> <img src="/2020/04/02/cesium-3dtiles-osgb/p2.png" class="" title="Data内部的组成"> <img src="/2020/04/02/cesium-3dtiles-osgb/p3.png" class="" title="Data内部的组成"><p>2.如何生成3dtiles<br>目前市面上的解决方案主要有cesiumlab/osg2cesiumApp。鉴于cesiumlab目前好像开始需要注册和收费，本着白嫖的精神使用另外一种文件进行转换就可以了。<br>高阶大佬可以直接转步github,<a href="https://github.com/fanvanzh/3dtiles" target="_blank" rel="noopener">3dtiles</a>是个好工具，以前研究过，但因为技术太渣，并没有全程跑下来运行成功。<br>3.osg2cesiumApp使用<br>直接按照说明使用即可，里面可能需要填写的参数我也没有闹明白，等以后再看吧</p><img src="/2020/04/02/cesium-3dtiles-osgb/p4.png" class="" title="软件使用截图"><h3 id="cesium加载3dtiles"><a href="#cesium加载3dtiles" class="headerlink" title="cesium加载3dtiles"></a>cesium加载3dtiles</h3><p>1.读取3dtiles文件<br>    我使用的是nginx进行代理，这样生成的文件就不必非得存放到指定的位置，只要进行地址映射就好了<br>2.cesium直接加载<br>    目前模型生成之后，加载到地图上找不到在哪里，智能通过移动模型中心点位置和高度才可以显示。<br>    等待解决</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;cesium加载三维倾斜模型&quot;&gt;&lt;a href=&quot;#cesium加载三维倾斜模型&quot; class=&quot;headerlink&quot; title=&quot;cesium加载三维倾斜模型&quot;&gt;&lt;/a&gt;cesium加载三维倾斜模型&lt;/h1&gt;&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="cesium" scheme="https://drangeer.github.io/categories/cesium/"/>
+    
+      <category term="gis" scheme="https://drangeer.github.io/categories/cesium/gis/"/>
+    
+    
+      <category term="3dtiles" scheme="https://drangeer.github.io/tags/3dtiles/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cesium-entity详解</title>
+    <link href="https://drangeer.github.io/2020/04/01/cesium-entity/"/>
+    <id>https://drangeer.github.io/2020/04/01/cesium-entity/</id>
+    <published>2020-04-01T09:09:17.000Z</published>
+    <updated>2020-04-07T07:52:28.471Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里主要记录在使用cesium的entity时候，遇到的一些问题</p><ul><li>点击不同类型的entity，展示对应信息框<br>  目前主要是在entity生成的时候，给他绑定好指定的组件，然后再获取的时候，拿到对应的组件信息，往自定义的customInfoWindow上挂载</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这里主要记录在使用cesium的entity时候，遇到的一些问题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点击不同类型的entity，展示对应信息框&lt;br&gt;  目前主要是在entity生成的时候，给他绑定好指定的组件，然后再获取的时候，拿到对应的组件信息，往自定义的customInfoW
+      
+    
+    </summary>
+    
+    
+      <category term="cesium" scheme="https://drangeer.github.io/categories/cesium/"/>
+    
+      <category term="gis" scheme="https://drangeer.github.io/categories/cesium/gis/"/>
+    
+    
+      <category term="question list" scheme="https://drangeer.github.io/tags/question-list/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo使用记录</title>
+    <link href="https://drangeer.github.io/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://drangeer.github.io/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-04-01T03:31:21.000Z</published>
+    <updated>2020-04-07T07:51:05.843Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1. 基本命令"></a>1. 基本命令</h3><ol><li>启动本地预览服务     <code>hexo s</code></li><li>重新生成项目    <code>hexo g</code></li><li>清空缓存    <code>hexo clean</code></li><li>发布到云端 <code>hexo d</code></li><li>s</li><li>s</li><li>s</li><li>s</li><li>部署到gitee之后，需要手动刷新pages</li></ol><hr><h3 id="2-发布文章"><a href="#2-发布文章" class="headerlink" title="2.发布文章"></a>2.发布文章</h3><pre><code>1. 文章位置  `your project location\source\_posts`2.添加图片   `{% asset_img picPath.png image describe %}` </code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-基本命令&quot;&gt;&lt;a href=&quot;#1-基本命令&quot; class=&quot;headerlink&quot; title=&quot;1. 基本命令&quot;&gt;&lt;/a&gt;1. 基本命令&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;启动本地预览服务     &lt;code&gt;hexo s&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;重新生成
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://drangeer.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://drangeer.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>require.context自动加载模块</title>
+    <link href="https://drangeer.github.io/2020/04/01/require-context/"/>
+    <id>https://drangeer.github.io/2020/04/01/require-context/</id>
+    <published>2020-04-01T03:06:02.000Z</published>
+    <updated>2020-04-07T07:53:07.391Z</updated>
+    
+    <content type="html"><![CDATA[<p>   最近看到项目里面使用<code>require.context</code>来自动加载所有的模块，减少手动复制粘贴，提示效率和代码逼格。整好时间允许，我也来看看到底是如何实现的。</p><h3 id="require-context是什么"><a href="#require-context是什么" class="headerlink" title="require.context是什么"></a>require.context是什么</h3><p>   一个webpack的api,通过执行require.context函数获取一个特定的上下文,主要用来实现自动化导入模块<br>   在前端工程中,如果遇到从一个文件夹引入很多模块的情况,可以使用这个api,它会遍历文件夹中的指定文件,然后自动导入,使得不需要每次显式的调用import导入模块</p><p>   比如在下面的情况中<br>   <img src="/2020/04/01/require-context/p1.png" class="" title="较多的模块导入"></p><h3 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h3><p>   require.context的使用方法如下，该函数执行后返回的是一个函数,并且这个函数有3个属性</p><ul><li><p>resolve  接受一个参数request,request为模块的匹配结果的的相对路径,返回这个匹配文件相对于整个工程的相对路径（）</p></li><li><p>keys     返回匹配成功模块的名字组成的数组</p></li><li><p>id       执行环境的id(目前发现没有什么实际意义)</p><pre><code class="javascript"><span class="built_in">require</span>.context(<span class="string">'directory'</span>,<span class="string">'bool'</span>,<span class="string">'reg'</span>)<span class="comment">//directory {String} -读取文件的路径</span><span class="comment">//useSubdirectories {Boolean} -是否遍历文件的子目录   </span><span class="comment">//regExp {RegExp} -匹配文件的正则</span><span class="comment">// 下面为demo</span><span class="keyword">const</span> modules= <span class="built_in">require</span>.context(<span class="string">'./'</span>,<span class="literal">true</span>,/.vue$/);<span class="keyword">const</span> relativePath= modules.keys()  <span class="comment">//获取所有.vue 模块的相对于./的路径</span><span class="keyword">const</span> <span class="built_in">module</span>=modules(relativePath[<span class="number">0</span>]).default  <span class="comment">// 获取第一个模块</span></code></pre><h3 id="使用范围"><a href="#使用范围" class="headerlink" title="使用范围"></a>使用范围</h3><p>1、自动模块导入<br>2、所有图片的导入</p><h3 id="QA"><a href="#QA" class="headerlink" title="QA"></a>QA</h3><p>目前在模块导出的时候，使用一个空对象{}接收对象名和对象值，再export default {XXX:XXX}<br>这样就在使用的时候，必须使用modules.XXX才可以，不能使用{XXX} 来直接使用<br>等待以后慢慢寻找更优解吧</p></li></ul><hr>   <img src="/2020/04/01/require-context/p2.png" class="" title="使用两种方式导出模块">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;   最近看到项目里面使用&lt;code&gt;require.context&lt;/code&gt;来自动加载所有的模块，减少手动复制粘贴，提示效率和代码逼格。整好时间允许，我也来看看到底是如何实现的。&lt;/p&gt;
+&lt;h3 id=&quot;require-context是什么&quot;&gt;&lt;a href=&quot;#re
+      
+    
+    </summary>
+    
+    
+    
+      <category term="webpack" scheme="https://drangeer.github.io/tags/webpack/"/>
+    
+      <category term="web" scheme="https://drangeer.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo主题pure使用指南</title>
+    <link href="https://drangeer.github.io/2020/03/13/webpackQuestion/"/>
+    <id>https://drangeer.github.io/2020/03/13/webpackQuestion/</id>
+    <published>2020-03-13T06:34:15.000Z</published>
+    <updated>2020-04-07T07:57:39.683Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-webpack-打包问题"><a href="#1-webpack-打包问题" class="headerlink" title="1.webpack 打包问题"></a>1.webpack 打包问题</h2><h4 id="Q-问题"><a href="#Q-问题" class="headerlink" title="Q:问题"></a>Q:问题</h4><p>​        当使用<code>&lt;%= BASE_URL %&gt;</code>进行项目打包的时候会抛出如下的bug</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">href</span>=<span class="string">"&lt;%= BASE_URL %&gt;favicon.ico"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  使用base_url的时候，在项目打包过程中会抛出如下错误，</span></span><br><span class="line"><span class="comment">  换成./就没有了，超级奇怪</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// active ...s\normalize-wheel\src\normalizeWheel.jsURIError: Failed to decode param '/%3C%=%20BASE_URL%20%%3Efavicon.ico'</span></span><br></pre></td></tr></table></figure><p><img src="1583826570990.png" alt="webpack编译问题"></p><h4 id="A-解决方法"><a href="#A-解决方法" class="headerlink" title="A:解决方法"></a>A:解决方法</h4><p>​        目前没有查询到问题出现的具体原因。在git上看到有相关的介绍，有说是因为项目级的webpack的版本和内部子模块使用的版本冲突导致；</p><p>​        现在规避了这个问题，使用<code>相对路径./</code>解决。</p><p>​        可能以后会遇到同样的问题，到时候再对这个bug进行完善补充吧。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-webpack-打包问题&quot;&gt;&lt;a href=&quot;#1-webpack-打包问题&quot; class=&quot;headerlink&quot; title=&quot;1.webpack 打包问题&quot;&gt;&lt;/a&gt;1.webpack 打包问题&lt;/h2&gt;&lt;h4 id=&quot;Q-问题&quot;&gt;&lt;a href=&quot;#Q
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://drangeer.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://drangeer.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World !</title>
+    <link href="https://drangeer.github.io/2020/03/12/01_hello-world/"/>
+    <id>https://drangeer.github.io/2020/03/12/01_hello-world/</id>
+    <published>2020-03-12T07:31:21.000Z</published>
+    <updated>2020-04-07T07:47:51.804Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="hello-blog-！"><a href="#hello-blog-！" class="headerlink" title="hello blog ！"></a>hello blog ！</h1><p>欢迎我走进自建博客时代，这里会记录一些我的工作和生活点滴事件…</p><hr><p>希望有幸浏览到这个blog的人，共享在此的片刻美好时光 ，若能对您有些许帮助的话，更会感到不胜荣幸！</p><p>​            </p><p>​                                                                                        记录于：2020年3月12日15:31:21</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;hello-blog-！&quot;&gt;&lt;a href=&quot;#hello-blog-！&quot; class=&quot;headerlink&quot; title=&quot;hello blog ！&quot;&gt;&lt;/a&gt;hello blog ！&lt;/h1&gt;&lt;p&gt;欢迎我走进自建博客时代，这里会记录一些我的工作和生活点滴事件
+      
+    
+    </summary>
+    
+    
+    
+      <category term="随笔" scheme="https://drangeer.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+</feed>

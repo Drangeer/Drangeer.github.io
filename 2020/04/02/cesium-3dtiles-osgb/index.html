@@ -17,19 +17,21 @@
   
   
   <title>cesium生成并加载3dTiles | LizZ&#39;s blog</title>
-  <meta name="description" content="cesium加载三维倾斜模型前言目前cesium加载海量模型，并不能直接通过gltf文件来使用，一种较为合适的通用做法是对大场景进行切片，即生成影像金字塔(LOD)。这样就跟wmts或tms方式一样来加载超大的影像。 osgb生成3dtiles1.osgb文件什么样主要长下面的样子，由一个元数据xml和一个Data文件夹组成，Data里面包含的是由一系列不同编号的osgb文件夹组成    2.如何">
+  <meta name="description" content="cesium加载三维倾斜模型前言目前cesium加载海量模型，并不能直接通过gltf文件来使用，一种较为合适的通用做法是对大场景进行切片，即生成影像金字塔(LOD)。这样就跟wmts或tms方式一样来加载超大的影像。 osgb生成3dtiles1.osgb文件什么样主要长下面的样子，由一个元数据xml和一个Data文件夹组成，Data里面包含的是由一系列不同编号的osgb文件夹组成     2.如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cesium生成并加载3dTiles">
 <meta property="og:url" content="https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/index.html">
 <meta property="og:site_name" content="LizZ的博客">
-<meta property="og:description" content="cesium加载三维倾斜模型前言目前cesium加载海量模型，并不能直接通过gltf文件来使用，一种较为合适的通用做法是对大场景进行切片，即生成影像金字塔(LOD)。这样就跟wmts或tms方式一样来加载超大的影像。 osgb生成3dtiles1.osgb文件什么样主要长下面的样子，由一个元数据xml和一个Data文件夹组成，Data里面包含的是由一系列不同编号的osgb文件夹组成    2.如何">
+<meta property="og:description" content="cesium加载三维倾斜模型前言目前cesium加载海量模型，并不能直接通过gltf文件来使用，一种较为合适的通用做法是对大场景进行切片，即生成影像金字塔(LOD)。这样就跟wmts或tms方式一样来加载超大的影像。 osgb生成3dtiles1.osgb文件什么样主要长下面的样子，由一个元数据xml和一个Data文件夹组成，Data里面包含的是由一系列不同编号的osgb文件夹组成     2.如">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/p1.png">
 <meta property="og:image" content="https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/p2.png">
 <meta property="og:image" content="https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/p3.png">
 <meta property="og:image" content="https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/p4.png">
+<meta property="og:image" content="https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/1.png">
+<meta property="og:image" content="https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/2.png">
 <meta property="article:published_time" content="2020-04-02T07:41:18.000Z">
-<meta property="article:modified_time" content="2020-04-07T07:47:36.568Z">
+<meta property="article:modified_time" content="2020-04-14T06:45:02.113Z">
 <meta property="article:author" content="LizZ">
 <meta property="article:tag" content="3dtiles">
 <meta name="twitter:card" content="summary">
@@ -177,7 +179,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cesium/">cesium</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cesium/gis/">gis</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cesium/">cesium</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cesium/gis/">gis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91/">cesium从入门到弃坑</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -187,7 +189,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3dtiles/" rel="tag">3dtiles</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/question-list/" rel="tag">question list</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/" rel="tag">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3dtiles/" rel="tag">3dtiles</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cesium/" rel="tag">cesium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/" rel="tag">idea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/question-list/" rel="tag">question list</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rtmp/" rel="tag">rtmp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/" rel="tag">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -197,7 +199,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -213,13 +215,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/cesium/">cesium</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/cesium/gis/">gis</a>
+                <a class="category-link" href="/categories/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91/">cesium从入门到弃坑</a>
               </p>
               <p class="item-title">
-                <a href="/2020/04/02/cesium-3dtiles-osgb/" class="title">cesium生成并加载3dTiles</a>
+                <a href="/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-2/" class="title">cesium从入门到弃坑-2</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-04-02T07:41:18.000Z" itemprop="datePublished">2020-04-02</time>
+                <time datetime="2020-04-13T09:41:26.000Z" itemprop="datePublished">2020-04-13</time>
               </p>
             </div>
           </li>
@@ -228,28 +230,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/cesium/">cesium</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/cesium/gis/">gis</a>
+                <a class="category-link" href="/categories/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91/">cesium从入门到弃坑</a>
               </p>
               <p class="item-title">
-                <a href="/2020/04/01/cesium-entity/" class="title">cesium-entity详解</a>
+                <a href="/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/" class="title">cesium从入门到弃坑-1</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-04-01T09:09:17.000Z" itemprop="datePublished">2020-04-01</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/hexo/">hexo</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">hexo使用记录</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-04-01T03:31:21.000Z" itemprop="datePublished">2020-04-01</time>
+                <time datetime="2020-04-13T08:43:46.000Z" itemprop="datePublished">2020-04-13</time>
               </p>
             </div>
           </li>
@@ -261,10 +248,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2020/04/01/require-context/" class="title">require.context自动加载模块</a>
+                <a href="/2020/04/09/IDEA%E6%8F%90%E7%A4%BA%E9%A1%B5%E9%9D%A2%E6%9C%AA%E6%8E%88%E6%9D%83/" class="title">IDEA提示页面未授权的解决方案</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-04-01T03:06:02.000Z" itemprop="datePublished">2020-04-01</time>
+                <time datetime="2020-04-09T03:11:11.000Z" itemprop="datePublished">2020-04-09</time>
               </p>
             </div>
           </li>
@@ -273,13 +260,28 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/hexo/">hexo</a>
+                
               </p>
               <p class="item-title">
-                <a href="/2020/03/13/webpackQuestion/" class="title">Hexo主题pure使用指南</a>
+                <a href="/2020/04/09/%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD/" class="title">rtmp视频直播终极解决方案</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-03-13T06:34:15.000Z" itemprop="datePublished">2020-03-13</time>
+                <time datetime="2020-04-09T03:05:59.000Z" itemprop="datePublished">2020-04-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91/">cesium从入门到弃坑</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/04/02/cesium-3dtiles-osgb/" class="title">cesium生成并加载3dTiles</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-04-02T07:41:18.000Z" itemprop="datePublished">2020-04-02</time>
               </p>
             </div>
           </li>
@@ -319,7 +321,7 @@
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/cesium/">cesium</a>►<a class="article-category-link" href="/categories/cesium/gis/">gis</a>
+    <a class="article-category-link" href="/categories/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91/">cesium从入门到弃坑</a>
   </span>
 
         
@@ -341,7 +343,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/02/cesium-3dtiles-osgb/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 370(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 802(字)</span>
 	
 	
 
@@ -349,13 +351,54 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <h1 id="cesium加载三维倾斜模型"><a href="#cesium加载三维倾斜模型" class="headerlink" title="cesium加载三维倾斜模型"></a>cesium加载三维倾斜模型</h1><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>目前cesium加载海量模型，并不能直接通过gltf文件来使用，一种较为合适的通用做法是对大场景进行切片，即生成影像金字塔(LOD)。这样就跟wmts或tms方式一样来加载超大的影像。</p>
-<h3 id="osgb生成3dtiles"><a href="#osgb生成3dtiles" class="headerlink" title="osgb生成3dtiles"></a>osgb生成3dtiles</h3><p>1.osgb文件什么样<br>主要长下面的样子，由一个元数据xml和一个Data文件夹组成，Data里面包含的是由一系列不同编号的osgb文件夹组成</p>
+        <h1 id="cesium加载三维倾斜模型"><a href="#cesium加载三维倾斜模型" class="headerlink" title="cesium加载三维倾斜模型"></a>cesium加载三维倾斜模型</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目前cesium加载海量模型，并不能直接通过gltf文件来使用，一种较为合适的通用做法是对大场景进行切片，即生成影像金字塔(LOD)。这样就跟wmts或tms方式一样来加载超大的影像。</p>
+<h2 id="osgb生成3dtiles"><a href="#osgb生成3dtiles" class="headerlink" title="osgb生成3dtiles"></a>osgb生成3dtiles</h2><h4 id="1-osgb文件什么样"><a href="#1-osgb文件什么样" class="headerlink" title="1.osgb文件什么样"></a>1.osgb文件什么样</h4><p>主要长下面的样子，由一个元数据xml和一个Data文件夹组成，Data里面包含的是由一系列不同编号的osgb文件夹组成</p>
 <img src="/2020/04/02/cesium-3dtiles-osgb/p1.png" class="" title="osgb文件的模样"> <img src="/2020/04/02/cesium-3dtiles-osgb/p2.png" class="" title="Data内部的组成"> <img src="/2020/04/02/cesium-3dtiles-osgb/p3.png" class="" title="Data内部的组成">
-<p>2.如何生成3dtiles<br>目前市面上的解决方案主要有cesiumlab/osg2cesiumApp。鉴于cesiumlab目前好像开始需要注册和收费，本着白嫖的精神使用另外一种文件进行转换就可以了。<br>高阶大佬可以直接转步github,<a href="https://github.com/fanvanzh/3dtiles" target="_blank" rel="noopener">3dtiles</a>是个好工具，以前研究过，但因为技术太渣，并没有全程跑下来运行成功。<br>3.osg2cesiumApp使用<br>直接按照说明使用即可，里面可能需要填写的参数我也没有闹明白，等以后再看吧</p>
+
+<h4 id="2-如何生成3dtiles"><a href="#2-如何生成3dtiles" class="headerlink" title="2.如何生成3dtiles"></a>2.如何生成3dtiles</h4><p>目前市面上的解决方案主要有cesiumlab/osg2cesiumApp。鉴于cesiumlab目前好像开始需要注册和收费，本着白嫖的精神使用另外一种文件进行转换就可以了。<br>高阶大佬可以直接转步github,<a href="https://github.com/fanvanzh/3dtiles" target="_blank" rel="noopener">3dtiles</a>是个好工具，以前研究过，但因为技术太渣和时间限制，没有对其进行详细的研究。</p>
+<h3 id="osg2cesiumApp"><a href="#osg2cesiumApp" class="headerlink" title="osg2cesiumApp"></a>osg2cesiumApp</h3><p>直接按照说明使用即可，下图中的数据是一个<code>错误</code>的参数，srs坐标系和原点都不对，应该是从xml文件里面获取的，但我拿到的测试数据坐标系没有转换，所以才导致后来发生了好多坑。</p>
 <img src="/2020/04/02/cesium-3dtiles-osgb/p4.png" class="" title="软件使用截图">
 
-<h3 id="cesium加载3dtiles"><a href="#cesium加载3dtiles" class="headerlink" title="cesium加载3dtiles"></a>cesium加载3dtiles</h3><p>1.读取3dtiles文件<br>    我使用的是nginx进行代理，这样生成的文件就不必非得存放到指定的位置，只要进行地址映射就好了<br>2.cesium直接加载<br>    目前模型生成之后，加载到地图上找不到在哪里，智能通过移动模型中心点位置和高度才可以显示。<br>    等待解决</p>
+<h3 id="cesiumlab"><a href="#cesiumlab" class="headerlink" title="cesiumlab"></a>cesiumlab</h3><p>因为已经有一份以前转换好的数据，关于这方面的叙述就先不展开了。cesiumlab或者其他的地方已经有很详细的资料了，直接拿来参考即可。</p>
+<h2 id="osg2cesiumApp与cesiumlab比较"><a href="#osg2cesiumApp与cesiumlab比较" class="headerlink" title="osg2cesiumApp与cesiumlab比较"></a>osg2cesiumApp与cesiumlab比较</h2><h2 id="两者都可以直接生成3dtiles，但生成的效果略有不同。"><a href="#两者都可以直接生成3dtiles，但生成的效果略有不同。" class="headerlink" title="两者都可以直接生成3dtiles，但生成的效果略有不同。"></a>两者都可以直接生成3dtiles，但生成的效果略有不同。</h2><ul>
+<li><p>osg2cesiumApp生成的效果<br><img src="1.png" alt="地图缩放问题"></p>
+</li>
+<li><p>cesiumlab生成效果<br><img src="2.png" alt="地图缩放问题"></p>
+</li>
+</ul>
+<hr>
+<h4 id="如图所示，能够很明显的看出来问题。"><a href="#如图所示，能够很明显的看出来问题。" class="headerlink" title="如图所示，能够很明显的看出来问题。"></a>如图所示，能够很明显的看出来问题。</h4><ul>
+<li><p>app生成的模型在地图缩放的时候，需要等待片刻才能显示所有的模型，lab生成的模型却不存在这个问题。</p>
+</li>
+<li><p>app模型看起来精细程度较高。</p>
+<p>深入分析原因，可能是lab采用了<code>分级tileset.json</code>，所以在不同层级能够获得较好的加载效果，但同时也损失了部分精细程度。</p>
+</li>
+</ul>
+<hr>
+<h2 id="cesium加载3dtiles"><a href="#cesium加载3dtiles" class="headerlink" title="cesium加载3dtiles"></a>cesium加载3dtiles</h2><p>1.读取3dtiles文件<br>    我使用的是nginx进行代理，这样生成的文件就不必非得存放到指定的位置，只要进行地址映射就好了<br>2.cesium直接加载<br>    目前模型生成之后，加载到地图上找不到在哪里，只能通过移动模型中心点位置和高度才可以显示。</p>
+<hr>
+<pre><code>(2020年4月14日11:36:37更新)
+现在使用原生的cesium可以正常加载，也没有任何显示问题，上次是因为使用了超图的cesium框架，具体细节未知，更加坚定了使用原生框架来解决问题。</code></pre><ol start="3">
+<li><p>模型高度不准确<br> 需要在模型加载之后，通过设置模型的高度来调整即可</p>
+<pre><code class="javascript"><span class="keyword">var</span> tileset = <span class="keyword">new</span> Cesium.Cesium3DTileset({
+       url: <span class="string">'/3dtiles/wkm4326/WKM/tileset.json'</span>
+     })
+     viewer.scene.primitives.add(tileset)
+
+     <span class="comment">// 修改高度</span>
+     <span class="keyword">const</span> h = <span class="number">-10</span>
+     tileset.readyPromise.then(<span class="function">(<span class="params">arg</span>) =&gt;</span> {
+       <span class="keyword">var</span> cartographic = Cesium.Cartographic.fromCartesian(arg.boundingSphere.center)
+       <span class="keyword">var</span> surface = Cesium.Cartesian3.fromRadians(cartographic.longitude, cartographic.latitude, cartographic.height)
+       <span class="keyword">var</span> offset = Cesium.Cartesian3.fromRadians(cartographic.longitude, cartographic.latitude, cartographic.height + h)
+       <span class="keyword">var</span> translation = Cesium.Cartesian3.subtract(offset, surface, <span class="keyword">new</span> Cesium.Cartesian3())
+       tileset.modelMatrix = Cesium.Matrix4.fromTranslation(translation)
+       viewer.zoomTo(tileset)
+     })
+</code></pre>
+</li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p> <a href="https://www.cnblogs.com/HandyLi/p/11113030.html" target="_blank" rel="noopener">https://www.cnblogs.com/HandyLi/p/11113030.html</a></p>
 
       
     </div>
@@ -385,7 +428,7 @@
       </div>
       <div class="media-body">
         <h3 class="media-heading"><a href="https://github.com/Drangeer" target="_blank"><span class="text-dark">LizZ</span><small class="ml-1x">GISer &amp; Web Developer</small></a></h3>
-        <div>享受生活，热爱生命。</div>
+        <div>热爱生命，享受生活。</div>
       </div>
     </figure>
   </div>
@@ -412,6 +455,10 @@
   <div class="bar-inner">
   
   <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/04/09/%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD/" title="rtmp视频直播终极解决方案"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+    </li>
     
     
     <li class="next">

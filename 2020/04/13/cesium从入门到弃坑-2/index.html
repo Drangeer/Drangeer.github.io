@@ -16,21 +16,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>hexo使用记录 | LizZ&#39;s blog</title>
-  <meta name="description" content="1. 基本命令 启动本地预览服务     hexo s 重新生成项目    hexo g 清空缓存    hexo clean 发布到云端 hexo d s s s s 部署到gitee之后，需要手动刷新pages   2.发布文章1. 文章位置  &#96;your project location\source\_posts&#96; 2.添加图片   &#96;{% asset_img picPath.png im">
+  <title>cesium从入门到弃坑-2 | LizZ&#39;s blog</title>
+  <meta name="description" content="1.cesium加载3dtiles正常情况下，cesium加载3dtiles的时候，网上一般的写法是使用指定的函数+url就可以实现3dtiles的加载了，但第一次加载的时候，却会报如下所示的错误。 错误说明为：RuntimeError: Unsupported glTF Extension: KHR_technique_webgl  2.解决方法从网上查询到的原因是cesium已经不支持KHR_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo使用记录">
-<meta property="og:url" content="https://drangeer.github.io/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:title" content="cesium从入门到弃坑-2">
+<meta property="og:url" content="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-2/index.html">
 <meta property="og:site_name" content="LizZ的博客">
-<meta property="og:description" content="1. 基本命令 启动本地预览服务     hexo s 重新生成项目    hexo g 清空缓存    hexo clean 发布到云端 hexo d s s s s 部署到gitee之后，需要手动刷新pages   2.发布文章1. 文章位置  &#96;your project location\source\_posts&#96; 2.添加图片   &#96;{% asset_img picPath.png im">
+<meta property="og:description" content="1.cesium加载3dtiles正常情况下，cesium加载3dtiles的时候，网上一般的写法是使用指定的函数+url就可以实现3dtiles的加载了，但第一次加载的时候，却会报如下所示的错误。 错误说明为：RuntimeError: Unsupported glTF Extension: KHR_technique_webgl  2.解决方法从网上查询到的原因是cesium已经不支持KHR_">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-01T03:31:21.000Z">
-<meta property="article:modified_time" content="2020-04-07T07:51:05.843Z">
+<meta property="og:image" content="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-2/1.jpg">
+<meta property="article:published_time" content="2020-04-13T09:41:26.000Z">
+<meta property="article:modified_time" content="2020-04-14T01:36:24.373Z">
 <meta property="article:author" content="LizZ">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="cesium">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-2/1.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://drangeer.github.io/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+  <link rel="canonical" href="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-2/index.html">
   
     <link rel="alternate" href="/atom.xml" title="LizZ的博客" type="application/atom+xml">
   
@@ -292,14 +294,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-03_hexo基本使用命令" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-cesium从入门到弃坑-2" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      hexo使用记录
+      cesium从入门到弃坑-2
     </h1>
   
 
@@ -307,20 +309,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
-	  <time datetime="2020-04-01T03:31:21.000Z" itemprop="datePublished">2020-04-01</time>
+	<a href="/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-2/" class="article-date">
+	  <time datetime="2020-04-13T09:41:26.000Z" itemprop="datePublished">2020-04-13</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    <a class="article-category-link" href="/categories/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91/">cesium从入门到弃坑</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/hexo/" rel="tag">hexo</a>
+	<a class="article-tag-link" href="/tags/cesium/" rel="tag">cesium</a>
   </span>
 
 
@@ -333,10 +335,10 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-2/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 78(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 377(字)</span>
 	
 	
 
@@ -344,20 +346,16 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <h3 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1. 基本命令"></a>1. 基本命令</h3><ol>
-<li>启动本地预览服务     <code>hexo s</code></li>
-<li>重新生成项目    <code>hexo g</code></li>
-<li>清空缓存    <code>hexo clean</code></li>
-<li>发布到云端 <code>hexo d</code></li>
-<li>s</li>
-<li>s</li>
-<li>s</li>
-<li>s</li>
-<li>部署到gitee之后，需要手动刷新pages</li>
-</ol>
-<hr>
-<h3 id="2-发布文章"><a href="#2-发布文章" class="headerlink" title="2.发布文章"></a>2.发布文章</h3><pre><code>1. 文章位置  `your project location\source\_posts`
-2.添加图片   `{% asset_img picPath.png image describe %}` </code></pre>
+        <h2 id="1-cesium加载3dtiles"><a href="#1-cesium加载3dtiles" class="headerlink" title="1.cesium加载3dtiles"></a>1.cesium加载3dtiles</h2><p>正常情况下，cesium加载3dtiles的时候，网上一般的写法是使用指定的函数+url就可以实现3dtiles的加载了，但第一次加载的时候，却会报如下所示的错误。</p>
+<p>错误说明为：<code>RuntimeError: Unsupported glTF Extension: KHR_technique_webgl</code></p>
+<p><img src="1.jpg" alt="添加3dtiles报错"></p>
+<h2 id="2-解决方法"><a href="#2-解决方法" class="headerlink" title="2.解决方法"></a>2.解决方法</h2><p>从网上查询到的原因是cesium已经不支持KHR_technique_webgl扩展新版，需要升级一下gltf数据、或者修改源码使其支持即可。</p>
+<p>现将实现代码粘贴如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fixGltf = <span class="function"><span class="keyword">function</span>(<span class="params">gltf</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!gltf.extensionsUsed) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> v = gltf.extensionsUsed.indexOf(<span class="string">'KHR_technique_webgl'</span>);</span><br><span class="line">    <span class="keyword">var</span> t = gltf.extensionsRequired.indexOf(<span class="string">'KHR_technique_webgl'</span>);</span><br><span class="line">    <span class="comment">// 中招了。。</span></span><br><span class="line">    <span class="keyword">if</span> (v !== <span class="number">-1</span>) &#123;</span><br><span class="line">        gltf.extensionsRequired.splice(t, <span class="number">1</span>, <span class="string">'KHR_techniques_webgl'</span>);</span><br><span class="line">        gltf.extensionsUsed.splice(v, <span class="number">1</span>, <span class="string">'KHR_techniques_webgl'</span>);</span><br><span class="line">        gltf.extensions = gltf.extensions || &#123;&#125;;</span><br><span class="line">        gltf.extensions[<span class="string">'KHR_techniques_webgl'</span>] = &#123;&#125;;</span><br><span class="line">        gltf.extensions[<span class="string">'KHR_techniques_webgl'</span>].programs = gltf.programs;</span><br><span class="line">        gltf.extensions[<span class="string">'KHR_techniques_webgl'</span>].shaders = gltf.shaders;</span><br><span class="line">        gltf.extensions[<span class="string">'KHR_techniques_webgl'</span>].techniques = gltf.techniques;</span><br><span class="line">        <span class="keyword">var</span> techniques = gltf.extensions[<span class="string">'KHR_techniques_webgl'</span>].techniques;</span><br><span class="line"></span><br><span class="line">        gltf.materials.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">mat, index</span>) </span>&#123;</span><br><span class="line">            gltf.materials[index].extensions[<span class="string">'KHR_technique_webgl'</span>].values = gltf.materials[index].values;</span><br><span class="line">            gltf.materials[index].extensions[<span class="string">'KHR_techniques_webgl'</span>] = gltf.materials[index].extensions[<span class="string">'KHR_technique_webgl'</span>];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> vtxfMaterialExtension = gltf.materials[index].extensions[<span class="string">'KHR_techniques_webgl'</span>];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> value <span class="keyword">in</span> vtxfMaterialExtension.values) &#123;</span><br><span class="line">                <span class="keyword">var</span> us = techniques[vtxfMaterialExtension.technique].uniforms;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> us) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (us[key] === value) &#123;</span><br><span class="line">                        vtxfMaterialExtension.values[key] = vtxfMaterialExtension.values[value];</span><br><span class="line">                        <span class="keyword">delete</span> vtxfMaterialExtension.values[value];</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        techniques.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">t</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> attribute <span class="keyword">in</span> t.attributes) &#123;</span><br><span class="line">                <span class="keyword">var</span> name = t.attributes[attribute];</span><br><span class="line">                t.attributes[attribute] = t.parameters[name];</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> uniform <span class="keyword">in</span> t.uniforms) &#123;</span><br><span class="line">                <span class="keyword">var</span> name = t.uniforms[uniform];</span><br><span class="line">                t.uniforms[uniform] = t.parameters[name];</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperties(Cesium.Model.prototype, &#123;</span><br><span class="line">    _cachedGltf: &#123;</span><br><span class="line">        <span class="keyword">set</span>: function (value) &#123;</span><br><span class="line">            <span class="keyword">this</span>._vtxf_cachedGltf = value;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>._vtxf_cachedGltf &amp;&amp; <span class="keyword">this</span>._vtxf_cachedGltf._gltf) &#123;</span><br><span class="line">                fixGltf(<span class="keyword">this</span>._vtxf_cachedGltf._gltf);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="keyword">get</span>: function () &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>._vtxf_cachedGltf;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="https://www.jianshu.com/p/e0e0a62c5726" target="_blank" rel="noopener">https://www.jianshu.com/p/e0e0a62c5726</a><br><a href="https://blog.csdn.net/qq_36377037/article/details/86591761" target="_blank" rel="noopener">https://blog.csdn.net/qq_36377037/article/details/86591761</a></p>
+
       
     </div>
     <div class="article-footer">
@@ -366,7 +364,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://drangeer.github.io/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/" title="hexo使用记录" target="_blank" rel="external">https://drangeer.github.io/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/</a>
+      <a href="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-2/" title="cesium从入门到弃坑-2" target="_blank" rel="external">https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-2/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -414,13 +412,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2020/04/01/cesium-entity/" title="cesium-entity详解"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2020/04/01/require-context/" title="require.context自动加载模块">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/" title="cesium从入门到弃坑-1">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
   </ul>

@@ -16,21 +16,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>hexo使用记录 | LizZ&#39;s blog</title>
-  <meta name="description" content="1. 基本命令 启动本地预览服务     hexo s 重新生成项目    hexo g 清空缓存    hexo clean 发布到云端 hexo d s s s s 部署到gitee之后，需要手动刷新pages   2.发布文章1. 文章位置  &#96;your project location\source\_posts&#96; 2.添加图片   &#96;{% asset_img picPath.png im">
+  <title>cesium从入门到弃坑-1 | LizZ&#39;s blog</title>
+  <meta name="description" content="最近因为项目需要，又开了一个填坑，来记录自己学习和使用cesium中遇到的问题或者总结的经验。 1.在vue中加载cesium主要的引入方式有两种  在index.html中直接加载js和css 通过webpack加载  下面详细记录两种加载方式 1.直接引用cesium  1.安装 npm i cesium  2.拷贝node_modules&#x2F;cesium&#x2F;build下的文件到public中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo使用记录">
-<meta property="og:url" content="https://drangeer.github.io/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:title" content="cesium从入门到弃坑-1">
+<meta property="og:url" content="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/index.html">
 <meta property="og:site_name" content="LizZ的博客">
-<meta property="og:description" content="1. 基本命令 启动本地预览服务     hexo s 重新生成项目    hexo g 清空缓存    hexo clean 发布到云端 hexo d s s s s 部署到gitee之后，需要手动刷新pages   2.发布文章1. 文章位置  &#96;your project location\source\_posts&#96; 2.添加图片   &#96;{% asset_img picPath.png im">
+<meta property="og:description" content="最近因为项目需要，又开了一个填坑，来记录自己学习和使用cesium中遇到的问题或者总结的经验。 1.在vue中加载cesium主要的引入方式有两种  在index.html中直接加载js和css 通过webpack加载  下面详细记录两种加载方式 1.直接引用cesium  1.安装 npm i cesium  2.拷贝node_modules&#x2F;cesium&#x2F;build下的文件到public中">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-01T03:31:21.000Z">
-<meta property="article:modified_time" content="2020-04-07T07:51:05.843Z">
+<meta property="og:image" content="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/1.png">
+<meta property="og:image" content="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/2.jpg">
+<meta property="og:image" content="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/3.png">
+<meta property="article:published_time" content="2020-04-13T08:43:46.000Z">
+<meta property="article:modified_time" content="2020-04-13T09:35:48.662Z">
 <meta property="article:author" content="LizZ">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="cesium">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://drangeer.github.io/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+  <link rel="canonical" href="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/index.html">
   
     <link rel="alternate" href="/atom.xml" title="LizZ的博客" type="application/atom+xml">
   
@@ -292,14 +296,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-03_hexo基本使用命令" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-cesium从入门到弃坑-1" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      hexo使用记录
+      cesium从入门到弃坑-1
     </h1>
   
 
@@ -307,20 +311,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
-	  <time datetime="2020-04-01T03:31:21.000Z" itemprop="datePublished">2020-04-01</time>
+	<a href="/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/" class="article-date">
+	  <time datetime="2020-04-13T08:43:46.000Z" itemprop="datePublished">2020-04-13</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    <a class="article-category-link" href="/categories/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91/">cesium从入门到弃坑</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/hexo/" rel="tag">hexo</a>
+	<a class="article-tag-link" href="/tags/cesium/" rel="tag">cesium</a>
   </span>
 
 
@@ -333,10 +337,10 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 78(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 393(字)</span>
 	
 	
 
@@ -344,20 +348,39 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <h3 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1. 基本命令"></a>1. 基本命令</h3><ol>
-<li>启动本地预览服务     <code>hexo s</code></li>
-<li>重新生成项目    <code>hexo g</code></li>
-<li>清空缓存    <code>hexo clean</code></li>
-<li>发布到云端 <code>hexo d</code></li>
-<li>s</li>
-<li>s</li>
-<li>s</li>
-<li>s</li>
-<li>部署到gitee之后，需要手动刷新pages</li>
+        <p>最近因为项目需要，又开了一个填坑，来记录自己学习和使用cesium中遇到的问题或者总结的经验。</p>
+<h4 id="1-在vue中加载cesium"><a href="#1-在vue中加载cesium" class="headerlink" title="1.在vue中加载cesium"></a>1.在vue中加载cesium</h4><p>主要的引入方式有两种</p>
+<ul>
+<li>在<code>index.html</code>中直接加载js和css</li>
+<li>通过webpack加载</li>
+</ul>
+<p>下面详细记录两种加载方式</p>
+<p><strong>1.直接引用cesium</strong></p>
+<blockquote>
+<p>1.安装 npm i cesium </p>
+<p>2.拷贝node_modules/cesium/build下的文件到public中</p>
+<p><img src="1.png" alt="cesium源文件"></p>
+<p>3.在<code>index.html</code>中引用<br><img src="2.jpg" alt="index中添加位置"></p>
+<p>然后就可以在项目中愉快的使用了</p>
+</blockquote>
+<p><strong>2.通过webpack加载cesium</strong></p>
+<blockquote>
+<ol>
+<li><p>安装包 yarn add cesium</p>
+</li>
+<li><p>配置vue.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> CopyWebpackPlugin = <span class="built_in">require</span>(<span class="string">'copy-webpack-plugin'</span>)</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加cesium文件路径</span></span><br><span class="line"><span class="keyword">const</span> cesiumSource = <span class="string">'./node_modules/cesium/Source'</span></span><br><span class="line"><span class="keyword">const</span> cesiumWorkers = <span class="string">'../Build/Cesium/Workers'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"> publicPath: <span class="string">'./'</span>,</span><br><span class="line"> outputDir: <span class="string">'dist'</span>,</span><br><span class="line"> assetsDir: <span class="string">'assets'</span>,</span><br><span class="line"> productionSourceMap: <span class="literal">false</span>,</span><br><span class="line"> filenameHashing: <span class="literal">false</span>,</span><br><span class="line"> lintOnSave: <span class="literal">true</span>,</span><br><span class="line"> devServer: &#123;</span><br><span class="line">   open: <span class="literal">false</span>,</span><br><span class="line">   host: <span class="string">'0.0.0.0'</span>,</span><br><span class="line">   port: <span class="number">8066</span>,</span><br><span class="line">   https: <span class="literal">false</span>,</span><br><span class="line">   hotOnly: <span class="literal">false</span>,</span><br><span class="line">   proxy: &#123;</span><br><span class="line">     <span class="string">'/3dtiles'</span>: &#123;</span><br><span class="line">       target: <span class="string">`http://localhost`</span>,</span><br><span class="line">       changeOrigin: <span class="literal">true</span></span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;,</span><br><span class="line"> configureWebpack: &#123;</span><br><span class="line">   output: &#123;</span><br><span class="line">     sourcePrefix: <span class="string">' '</span></span><br><span class="line">   &#125;,</span><br><span class="line">   amd: &#123;</span><br><span class="line">     toUrlUndefined: <span class="literal">true</span></span><br><span class="line">   &#125;,</span><br><span class="line">   resolve: &#123;</span><br><span class="line">     alias: &#123;</span><br><span class="line">       vue$: <span class="string">'vue/dist/vue.esm.js'</span>,</span><br><span class="line">       <span class="string">'@'</span>: path.resolve(<span class="string">'src'</span>),</span><br><span class="line">       cesium: path.resolve(__dirname, cesiumSource)</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">   plugins: [</span><br><span class="line">     <span class="keyword">new</span> CopyWebpackPlugin([&#123; <span class="attr">from</span>: path.join(cesiumSource, cesiumWorkers), <span class="attr">to</span>: <span class="string">'Workers'</span> &#125;]),</span><br><span class="line">     <span class="keyword">new</span> CopyWebpackPlugin([&#123; <span class="attr">from</span>: path.join(cesiumSource, <span class="string">'Assets'</span>), <span class="attr">to</span>: <span class="string">'Assets'</span> &#125;]),</span><br><span class="line">     <span class="keyword">new</span> CopyWebpackPlugin([&#123; <span class="attr">from</span>: path.join(cesiumSource, <span class="string">'Widgets'</span>), <span class="attr">to</span>: <span class="string">'Widgets'</span> &#125;]),</span><br><span class="line">     <span class="keyword">new</span> CopyWebpackPlugin([&#123; <span class="attr">from</span>: path.join(cesiumSource, <span class="string">'ThirdParty/Workers'</span>), <span class="attr">to</span>: <span class="string">'ThirdParty/Workers'</span> &#125;]),</span><br><span class="line">     <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">       CESIUM_BASE_URL: <span class="built_in">JSON</span>.stringify(<span class="string">'./'</span>)</span><br><span class="line">     &#125;)</span><br><span class="line">   ],</span><br><span class="line">   <span class="built_in">module</span>: &#123;</span><br><span class="line">     unknownContextCritical: <span class="regexp">/^.\/.*$/</span>,</span><br><span class="line">     unknownContextCritical: <span class="literal">false</span></span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<hr>
-<h3 id="2-发布文章"><a href="#2-发布文章" class="headerlink" title="2.发布文章"></a>2.发布文章</h3><pre><code>1. 文章位置  `your project location\source\_posts`
-2.添加图片   `{% asset_img picPath.png image describe %}` </code></pre>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>项目引用<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /*网上有部分代码是使用下面的情况直接引用，但是我这里加载的时候，提示cesium is undefined*/</span></span><br><span class="line"><span class="comment">// import  Cesium from 'cesium/Cesium'</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Cesium <span class="keyword">from</span> <span class="string">'cesium/Cesium'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'cesium/Widgets/widgets.css'</span></span><br><span class="line"><span class="comment">// 接下来就按照正常的方式加载即可</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>最后附一张图表明项目添加成功<br><img src="3.png" alt="cesium添加成功"></p>
+
       
     </div>
     <div class="article-footer">
@@ -366,7 +389,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://drangeer.github.io/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/" title="hexo使用记录" target="_blank" rel="external">https://drangeer.github.io/2020/04/01/03_hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/</a>
+      <a href="https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/" title="cesium从入门到弃坑-1" target="_blank" rel="external">https://drangeer.github.io/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-1/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -415,12 +438,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/04/01/cesium-entity/" title="cesium-entity详解"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+      <a href="/2020/04/13/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-2/" title="cesium从入门到弃坑-2"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/04/01/require-context/" title="require.context自动加载模块">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/04/09/IDEA%E6%8F%90%E7%A4%BA%E9%A1%B5%E9%9D%A2%E6%9C%AA%E6%8E%88%E6%9D%83/" title="IDEA提示页面未授权的解决方案">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
   </ul>

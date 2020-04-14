@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://drangeer.github.io/"/>
-  <updated>2020-04-14T01:36:24.373Z</updated>
+  <updated>2020-04-14T08:33:27.851Z</updated>
   <id>https://drangeer.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cesium从入门到弃坑-3</title>
+    <link href="https://drangeer.github.io/2020/04/14/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-3/"/>
+    <id>https://drangeer.github.io/2020/04/14/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91-3/</id>
+    <published>2020-04-14T08:12:05.000Z</published>
+    <updated>2020-04-14T08:33:27.851Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="cesium添加dem"><a href="#cesium添加dem" class="headerlink" title="cesium添加dem"></a>cesium添加dem</h2><p>cesium添加dem的过程一番风顺，并没有遇到什么奇奇怪怪的问题。</p><p>其中提到的<code>gdal2srtmtiles_x64</code>软件，是使用python进行编写的。按照说明文档逐步进行操作即可。<br>当发现<code>Python编译出现错误SyntaxError: Non-ASCII character &#39;\xe7&#39;</code>这个错误的时候，是因为python2.7的默认编码文件是用ASCII码，而文件中包含了中文注释或者输出路径。<br>需要在文件开头加入一行代码将文件存成UTF-8格式即可</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#coding&#x3D;utf-8</span><br></pre></td></tr></table></figure><p>下面附图为dem添加成功的显示效果<br><img src="1.png" alt="dem添加效果"></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.jianshu.com/p/62d6f03f44e3" target="_blank" rel="noopener">https://www.jianshu.com/p/62d6f03f44e3</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;cesium添加dem&quot;&gt;&lt;a href=&quot;#cesium添加dem&quot; class=&quot;headerlink&quot; title=&quot;cesium添加dem&quot;&gt;&lt;/a&gt;cesium添加dem&lt;/h2&gt;&lt;p&gt;cesium添加dem的过程一番风顺，并没有遇到什么奇奇怪怪的问题。
+      
+    
+    </summary>
+    
+    
+      <category term="cesium从入门到弃坑" scheme="https://drangeer.github.io/categories/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91/"/>
+    
+    
+      <category term="cesium" scheme="https://drangeer.github.io/tags/cesium/"/>
+    
+  </entry>
   
   <entry>
     <title>cesium从入门到弃坑-2</title>
@@ -115,7 +141,7 @@
     <link href="https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/"/>
     <id>https://drangeer.github.io/2020/04/02/cesium-3dtiles-osgb/</id>
     <published>2020-04-02T07:41:18.000Z</published>
-    <updated>2020-04-14T06:45:02.113Z</updated>
+    <updated>2020-04-14T07:01:42.816Z</updated>
     
     <content type="html"><![CDATA[<h1 id="cesium加载三维倾斜模型"><a href="#cesium加载三维倾斜模型" class="headerlink" title="cesium加载三维倾斜模型"></a>cesium加载三维倾斜模型</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目前cesium加载海量模型，并不能直接通过gltf文件来使用，一种较为合适的通用做法是对大场景进行切片，即生成影像金字塔(LOD)。这样就跟wmts或tms方式一样来加载超大的影像。</p><h2 id="osgb生成3dtiles"><a href="#osgb生成3dtiles" class="headerlink" title="osgb生成3dtiles"></a>osgb生成3dtiles</h2><h4 id="1-osgb文件什么样"><a href="#1-osgb文件什么样" class="headerlink" title="1.osgb文件什么样"></a>1.osgb文件什么样</h4><p>主要长下面的样子，由一个元数据xml和一个Data文件夹组成，Data里面包含的是由一系列不同编号的osgb文件夹组成</p><img src="/2020/04/02/cesium-3dtiles-osgb/p1.png" class="" title="osgb文件的模样"> <img src="/2020/04/02/cesium-3dtiles-osgb/p2.png" class="" title="Data内部的组成"> <img src="/2020/04/02/cesium-3dtiles-osgb/p3.png" class="" title="Data内部的组成"><h4 id="2-如何生成3dtiles"><a href="#2-如何生成3dtiles" class="headerlink" title="2.如何生成3dtiles"></a>2.如何生成3dtiles</h4><p>目前市面上的解决方案主要有cesiumlab/osg2cesiumApp。鉴于cesiumlab目前好像开始需要注册和收费，本着白嫖的精神使用另外一种文件进行转换就可以了。<br>高阶大佬可以直接转步github,<a href="https://github.com/fanvanzh/3dtiles" target="_blank" rel="noopener">3dtiles</a>是个好工具，以前研究过，但因为技术太渣和时间限制，没有对其进行详细的研究。</p><h3 id="osg2cesiumApp"><a href="#osg2cesiumApp" class="headerlink" title="osg2cesiumApp"></a>osg2cesiumApp</h3><p>直接按照说明使用即可，下图中的数据是一个<code>错误</code>的参数，srs坐标系和原点都不对，应该是从xml文件里面获取的，但我拿到的测试数据坐标系没有转换，所以才导致后来发生了好多坑。</p><img src="/2020/04/02/cesium-3dtiles-osgb/p4.png" class="" title="软件使用截图"><h3 id="cesiumlab"><a href="#cesiumlab" class="headerlink" title="cesiumlab"></a>cesiumlab</h3><p>因为已经有一份以前转换好的数据，关于这方面的叙述就先不展开了。cesiumlab或者其他的地方已经有很详细的资料了，直接拿来参考即可。</p><h2 id="osg2cesiumApp与cesiumlab比较"><a href="#osg2cesiumApp与cesiumlab比较" class="headerlink" title="osg2cesiumApp与cesiumlab比较"></a>osg2cesiumApp与cesiumlab比较</h2><h2 id="两者都可以直接生成3dtiles，但生成的效果略有不同。"><a href="#两者都可以直接生成3dtiles，但生成的效果略有不同。" class="headerlink" title="两者都可以直接生成3dtiles，但生成的效果略有不同。"></a>两者都可以直接生成3dtiles，但生成的效果略有不同。</h2><ul><li><p>osg2cesiumApp生成的效果<br><img src="1.png" alt="地图缩放问题"></p></li><li><p>cesiumlab生成效果<br><img src="2.png" alt="地图缩放问题"></p></li></ul><hr><h4 id="如图所示，能够很明显的看出来问题。"><a href="#如图所示，能够很明显的看出来问题。" class="headerlink" title="如图所示，能够很明显的看出来问题。"></a>如图所示，能够很明显的看出来问题。</h4><ul><li><p>app生成的模型在地图缩放的时候，需要等待片刻才能显示所有的模型，lab生成的模型却不存在这个问题。</p></li><li><p>app模型看起来精细程度较高。</p><p>深入分析原因，可能是lab采用了<code>分级tileset.json</code>，所以在不同层级能够获得较好的加载效果，但同时也损失了部分精细程度。</p></li></ul><hr><h2 id="cesium加载3dtiles"><a href="#cesium加载3dtiles" class="headerlink" title="cesium加载3dtiles"></a>cesium加载3dtiles</h2><p>1.读取3dtiles文件<br>    我使用的是nginx进行代理，这样生成的文件就不必非得存放到指定的位置，只要进行地址映射就好了<br>2.cesium直接加载<br>    目前模型生成之后，加载到地图上找不到在哪里，只能通过移动模型中心点位置和高度才可以显示。</p><hr><pre><code>(2020年4月14日11:36:37更新)现在使用原生的cesium可以正常加载，也没有任何显示问题，上次是因为使用了超图的cesium框架，具体细节未知，更加坚定了使用原生框架来解决问题。</code></pre><ol start="3"><li><p>模型高度不准确<br> 需要在模型加载之后，通过设置模型的高度来调整即可</p><pre><code class="javascript"><span class="keyword">var</span> tileset = <span class="keyword">new</span> Cesium.Cesium3DTileset({       url: <span class="string">'/3dtiles/wkm4326/WKM/tileset.json'</span>     })     viewer.scene.primitives.add(tileset)     <span class="comment">// 修改高度</span>     <span class="keyword">const</span> h = <span class="number">-10</span>     tileset.readyPromise.then(<span class="function">(<span class="params">arg</span>) =&gt;</span> {       <span class="keyword">var</span> cartographic = Cesium.Cartographic.fromCartesian(arg.boundingSphere.center)       <span class="keyword">var</span> surface = Cesium.Cartesian3.fromRadians(cartographic.longitude, cartographic.latitude, cartographic.height)       <span class="keyword">var</span> offset = Cesium.Cartesian3.fromRadians(cartographic.longitude, cartographic.latitude, cartographic.height + h)       <span class="keyword">var</span> translation = Cesium.Cartesian3.subtract(offset, surface, <span class="keyword">new</span> Cesium.Cartesian3())       tileset.modelMatrix = Cesium.Matrix4.fromTranslation(translation)       viewer.zoomTo(tileset)     })</code></pre></li></ol><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p> <a href="https://www.cnblogs.com/HandyLi/p/11113030.html" target="_blank" rel="noopener">https://www.cnblogs.com/HandyLi/p/11113030.html</a></p>]]></content>
     
@@ -132,7 +158,7 @@
       <category term="cesium从入门到弃坑" scheme="https://drangeer.github.io/categories/cesium%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BC%83%E5%9D%91/"/>
     
     
-      <category term="3dtiles" scheme="https://drangeer.github.io/tags/3dtiles/"/>
+      <category term="cesium" scheme="https://drangeer.github.io/tags/cesium/"/>
     
   </entry>
   
@@ -141,7 +167,7 @@
     <link href="https://drangeer.github.io/2020/04/01/cesium-entity/"/>
     <id>https://drangeer.github.io/2020/04/01/cesium-entity/</id>
     <published>2020-04-01T09:09:17.000Z</published>
-    <updated>2020-04-07T07:52:28.471Z</updated>
+    <updated>2020-04-14T07:05:23.574Z</updated>
     
     <content type="html"><![CDATA[<p>这里主要记录在使用cesium的entity时候，遇到的一些问题</p><ul><li>点击不同类型的entity，展示对应信息框<br>  目前主要是在entity生成的时候，给他绑定好指定的组件，然后再获取的时候，拿到对应的组件信息，往自定义的customInfoWindow上挂载</li></ul>]]></content>
     
@@ -158,8 +184,6 @@
     
     
       <category term="cesium" scheme="https://drangeer.github.io/categories/cesium/"/>
-    
-      <category term="gis" scheme="https://drangeer.github.io/categories/cesium/gis/"/>
     
     
       <category term="question list" scheme="https://drangeer.github.io/tags/question-list/"/>
